@@ -1,15 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hello
+    name: hello
 spec:
-  rules:
-    - host: hello.debashis.xyz
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: hello
-                port:
-                  number: 80
+    rules:
+        - host: hello.debashis.xyz
+          http:
+              paths:
+                  - path: /
+                    pathType: Prefix
+                    backend:
+                        service:
+                            name: hello
+                            port:
+                                number: 80
