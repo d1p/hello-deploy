@@ -6,4 +6,4 @@ resources:
   - ingress.yaml
 images:
   - name: harbor.debashis.xyz/homelab/hello-app
-    newTag: 'initial'
+    newTag: 'b250786'
