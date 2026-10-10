@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLavels:
+    matchLabels:
       app: hello
   template:
     metadata:
@@ -15,7 +15,7 @@ spec:
       imagePullSecrets:
         - name: harbor-pull
       containers:
-          name: hello
+        - name: hello
           image: harbor.debashis.xyz/homelab/hello-app
           ports:
             - containerPort: 8000
@@ -23,9 +23,9 @@ spec:
             httpGet:
               path: /healthz
               port: 8000
-            resources:
-              requests:
-                cpu: 50m
-                memory: 64Mi
-              limits:
-                memory: 128Mi
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              memory: 128Mi
